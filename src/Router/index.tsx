@@ -1,10 +1,11 @@
 import { FunctionComponent, ReactNode } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from '../App';
-import Header from '../components/ui/Header';
-import Jobs from '../components/views/Jobs';
-import Wrapper from '../components/ui/Wrapper';
 import Container from '../components/ui/Container';
+import Footer from '../components/ui/Footer';
+import Header from '../components/ui/Header';
+import Wrapper from '../components/ui/Wrapper';
+import Jobs from '../components/views/Jobs';
 
 const Router: FunctionComponent = (): ReactNode => {
 	return (
@@ -25,6 +26,9 @@ const Router: FunctionComponent = (): ReactNode => {
 						/>
 					</Routes>
 				</div>
+				<Container>
+					<Footer />
+				</Container>
 			</Wrapper>
 		</BrowserRouter>
 	);

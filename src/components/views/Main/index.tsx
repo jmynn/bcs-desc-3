@@ -12,7 +12,7 @@ const paths: string[] = [
 const picturesVariant: Variants = {
 	hidden: (i: number) => ({
 		opacity: 0,
-		y: -100 * i,
+		y: 10 * i,
 	}),
 	visible: {
 		y: 0,
@@ -76,7 +76,6 @@ const Main = (): ReactNode => {
 								duration: 1.5,
 								delay: 0.3 * i,
 							}}
-							whileHover={{}}
 						/>
 					))}
 				</div>

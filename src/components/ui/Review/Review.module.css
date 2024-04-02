@@ -1,0 +1,24 @@
+.review {
+	box-sizing: border-box;
+	border: 3px solid var(--color-black);
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+    gap: 10px;
+}
+.text {
+	color: var(--color-black);
+	font-family: Spectral;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    width: fit-content;
+}
+.text::before {
+    content: url('/micro-star-black.svg');
+
+}
