@@ -1,0 +1,97 @@
+.service {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	border-top: 1px solid
+		color-mix(in srgb, var(--color-white), transparent 40%);
+	padding: 40px 0;
+	transition: all ease-in-out 0.3s;
+}
+.title {
+	display: flex;
+	flex-direction: column;
+	word-break: break-all;
+	text-align: center;
+	align-items: center;
+	gap: 15px;
+	color: var(--color-white);
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+.title > svg {
+	max-width: 60px;
+}
+
+.contents {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 10px;
+}
+.content {
+	text-align: right;
+	display: flex;
+	align-items: flex-start;
+	color: var(--color-white);
+	font-family: Comfortaa;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 1;
+	gap: 5px;
+	text-wrap: balance;
+}
+.content::after {
+	content: url('/micro-star.svg');
+}
+.service:last-child {
+	border-bottom: 1px solid
+		color-mix(in srgb, var(--color-white), transparent 40%);
+}
+
+.price {
+	text-align: center;
+	color: var(--color-white);
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.3;
+}
+.price > span {
+	display: inline-block;
+	margin: 0 5px;
+}
+
+@media screen and (min-width: 1200px) {
+	.service {
+		flex-direction: row;
+		align-items: center;
+	}
+	.price {
+		font-size: min(50px, calc(100vw / 10 / 3));
+	}
+	.title {
+		font-size: min(45px, calc(100vw / 10 / 3));
+		flex-direction: row;
+		flex: 1 0 calc(55% - 10px);
+	}
+	.price,
+	.contents {
+		flex: 0 0 calc((100% - 55%) / 2 - 10px);
+	}
+	.title > svg {
+		max-width: 100px;
+	}
+}
+
+@media screen and (hover: hover) {
+	.service:hover,
+	.service:hover *:not(.content) {
+		cursor: pointer;
+		transition: all ease-in-out 0.3s;
+		color: var(--brand-green);
+		stroke: var(--brand-green);
+	}
+}

@@ -1,6 +1,7 @@
 import Container from './components/ui/Container';
 import Honor from './components/views/Honor';
 import Main from './components/views/Main';
+import Services from './components/views/Services';
 import Team from './components/views/Team';
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
 				<Team />
 			</Container>
 			<Honor />
+			<Container>
+				<Services />
+			</Container>
 		</>
 	);
 }
