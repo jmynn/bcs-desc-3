@@ -1,0 +1,41 @@
+/* 400, 500, 700 */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap'); 
+/* 400 */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&display=swap');
+/* 500, 600, 700 */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Spectral:wght@400;500;600;700&display=swap');
+:root {
+    --brand-violet: rgb(118, 70, 255);
+    --brand-yellow: rgb(250, 253, 131);
+    --brand-green: rgb(207, 252, 134);
+    --color-white: rgb(255, 255, 255);
+    --color-black: rgb(0, 0, 0);
+    --container: 88.2%;
+}
+
+@font-face {
+	font-family: 'DisketMono';
+	src: local('DisketMono'),
+		url('../assets/fonts/DisketMono/Disket-Mono-Regular.ttf')
+			format('truetype');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Enthalpy';
+	src: local('Enthalpy'),
+		url('../assets/fonts/Enthalpy-298/enthalpy298regular.otf')
+			format('opentype');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Intro';
+	src: local('Intro'),
+		url('../assets/fonts/Intro/intro_regular.ttf')
+			format('truetype');
+	font-weight: 400;
+	font-display: swap;
+}

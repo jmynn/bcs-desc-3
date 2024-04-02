@@ -1,0 +1,49 @@
+.nav > a.active {
+	color: var(--brand-violet);
+}
+.nav > a {
+	color: var(--color-white);
+	font-family: Intro;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 2;
+	transition: all ease-in-out 0.3s;
+}
+.nav > a:first-child {
+	color: var(--brand-violet);
+}
+.nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0 17px;
+}
+
+.socials {
+	display: flex;
+	align-items: center;
+	gap: 0 8px;
+}
+.socials > a {
+	transition: all ease-in-out 0.3s;
+}
+
+@media screen and (min-width: 767px) {
+	.nav {
+		flex-direction: row;
+	}
+}
+
+@media screen and (hover: hover) {
+	.nav > a:hover {
+		cursor: pointer;
+		transition: all ease-in-out 0.3s;
+		color: color-mix(in srgb, var(--brand-violet), var(--color-white));
+	}
+	.socials > a:hover {
+		cursor: pointer;
+		transition: all ease-in-out 0.3s;
+		opacity: 0.7;
+	}
+}

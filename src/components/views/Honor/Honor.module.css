@@ -1,0 +1,154 @@
+.honor {
+	background-color: var(--color-white);
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	padding: 20px 0 30px;
+	position: relative;
+}
+.honor::after {
+	content: url('/star-gray.png');
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.honor > * {
+	position: relative;
+	z-index: 1;
+}
+.honor > *::before,
+.honor > *::after {
+	content: '';
+	position: absolute;
+	left: -4vw;
+	top: 11%;
+	width: 96vw;
+	aspect-ratio: 3 / 1;
+	border-radius: 50%;
+	border: 1.5px solid color-mix(in srgb, var(--color-black), transparent 30%);
+	z-index: -1;
+	display: none;
+}
+.honor > *::before {
+	rotate: -12deg;
+}
+.honor > *::after {
+	rotate: 0.2deg;
+}
+
+.title {
+	color: var(--color-black);
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1;
+	white-space: pre-line;
+}
+.subtitle {
+	color: var(--color-black);
+	font-family: Spectral;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 0.8;
+	text-align: right;
+	white-space: pre-line;
+	margin: 0 0 0 auto;
+}
+.row {
+	display: flex;
+	align-items: center;
+}
+.row:first-child {
+	flex-direction: column;
+	align-items: baseline;
+	gap: 10px;
+	margin: 0 0 30px 0;
+}
+.row:nth-child(2) {
+	margin: 0 0 28px 0;
+}
+.row:last-child {
+	justify-content: center;
+}
+.cards {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+	overflow: hidden;
+	width: 100%;
+}
+.feedback {
+	background-color: var(--brand-green);
+	color: var(--color-black);
+	font-family: Enthalpy;
+	font-weight: 400;
+	line-height: 1;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 40px;
+	border-radius: 20px;
+	transition: all ease-in-out 0.3s;
+}
+.feedback > img:last-child {
+	rotate: 180deg;
+}
+.feedback > img {
+	max-width: 20%;
+}
+
+@media screen and (min-width: 767px) {
+	.honor {
+		padding: 40px 0 55px;
+	}
+	.title {
+		font-size: 33px;
+	}
+	.subtitle {
+		font-size: 22px;
+		white-space: pre-line;
+	}
+	.row:first-child {
+		flex-direction: row;
+		gap: 0;
+		align-items: center;
+		margin: 0 0 120px 0;
+		justify-content: space-between;
+	}
+	.honor > *::before,
+	.honor > *::after {
+		display: block;
+	}
+	.feedback > img {
+		max-width: 100%;
+	}
+	.feedback {
+		font-size: 48px;
+	}
+}
+@media (min-width: 956px) {
+	.cards {
+		flex-direction: row;
+		gap: 1%;
+	}
+	.feedback {
+		font-size: 62px;
+		padding: 20px 60px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.cards {
+		flex-direction: row;
+		justify-content: center;
+		gap: 0 65px;
+	}
+}
+
+@media screen and (hover: hover) {
+	.feedback:hover {
+		transition: all ease-in-out 0.3s;
+		opacity: 0.7;
+	}
+}
