@@ -5,7 +5,7 @@ import Container from '../components/ui/Container';
 import Footer from '../components/ui/Footer';
 import Header from '../components/ui/Header';
 import Wrapper from '../components/ui/Wrapper';
-import Jobs from '../components/views/Jobs';
+import Empty from '../components/views/Empty';
 
 const Router: FunctionComponent = (): ReactNode => {
 	return (
@@ -21,8 +21,8 @@ const Router: FunctionComponent = (): ReactNode => {
 							element={<App />}
 						/>
 						<Route
-							path='/jobs'
-							element={<Jobs />}
+							path='*'
+							element={<Empty />}
 						/>
 					</Routes>
 				</div>

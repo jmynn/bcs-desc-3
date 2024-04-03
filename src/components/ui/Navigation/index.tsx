@@ -6,19 +6,19 @@ import styles from './Navigation.module.css';
 
 const routes = [
 	{
-		to: '/services',
+		to: '/test',
 		label: 'услуги',
 	},
 	{
-		to: '/jobs',
+		to: '/test',
 		label: 'работы',
 	},
 	{
-		to: '/price',
+		to: '/test',
 		label: 'цены',
 	},
 	{
-		to: '/contacts',
+		to: '/test',
 		label: 'контакты',
 	},
 ];
@@ -27,12 +27,12 @@ const Navigation = (): ReactNode => {
 	return (
 		<nav className={styles.nav}>
 			<NavLink
-					to={'/gift'}
-					className={({ isActive }) =>
-						isActive ? `${styles.active}` : ''
-					}>
-					Подарок
-				</NavLink>
+				to={'/test'}
+				className={({ isActive }) =>
+					isActive ? `${styles.active}` : ''
+				}>
+				Подарок
+			</NavLink>
 			{routes.map((route, i) => (
 				<NavLink
 					key={i}
@@ -45,14 +45,14 @@ const Navigation = (): ReactNode => {
 			))}
 			<div className={styles.socials}>
 				<NavLink
-					to={'/tg'}
+					to={'/test'}
 					className={({ isActive }) =>
 						isActive ? `${styles.active}` : ''
 					}>
 					<IconTg />
 				</NavLink>
 				<NavLink
-					to={'/ws'}
+					to={'/test'}
 					className={({ isActive }) =>
 						isActive ? `${styles.active}` : ''
 					}>

@@ -36,6 +36,7 @@
 .feedback {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	background-color: var(--brand-green);
 	border-radius: 20px;
 	padding: 17px 30px;

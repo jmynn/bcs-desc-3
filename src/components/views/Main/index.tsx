@@ -1,27 +1,34 @@
-import { Variants, motion } from 'framer-motion';
-import { ReactNode, useRef, useState } from 'react';
-import ModalFeedback from '../../ui/ModalFeedback';
+import { motion } from 'framer-motion';
+import { ReactNode, useContext, useRef } from 'react';
+import { ModalContext } from '../../../providers/ModalProvider';
+import Pack from '../../ui/Pack';
 import styles from './Main.module.css';
 
-const paths: string[] = [
-	'/pic-1 rotate.png',
-	'/pic-2 rotate.png',
-	'/pic-3 rotate.png',
-	'/pic-4 rotate.png',
-];
-const picturesVariant: Variants = {
-	hidden: (i: number) => ({
+const mainVariants = {
+	hidden: {
+		x: -150,
 		opacity: 0,
-		y: 10 * i,
-	}),
+	},
 	visible: {
-		y: 0,
+		opacity: 1,
+		x: 0,
+	},
+};
+const mainTransition = {
+	duration: 1,
+	ease: 'backIn',
+};
+const infoVariants = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
 		opacity: 1,
 	},
 };
 
 const Main = (): ReactNode => {
-	const [isOpen, setIsOpen] = useState(false);
+	const { handleChangeVisibility } = useContext(ModalContext);
 	const promocode = useRef('NEFT2GAZ8');
 	const handleClick = () => {
 		navigator.clipboard
@@ -32,53 +39,71 @@ const Main = (): ReactNode => {
 	return (
 		<main className={styles.main}>
 			<div className={styles.block}>
-				<h1 className={styles.title}>
+				<motion.h1
+					className={styles.title}
+					initial='hidden'
+					animate='visible'
+					variants={mainVariants}
+					transition={mainTransition}>
 					ДИЗАЙНИМ, ВЕРСТАЕМ
 					{'\n'}
 					<span>САЙТЫ НА ТИЛЬДЕ</span>
-				</h1>
-				<div className={styles.subtitle}>
+				</motion.h1>
+				<motion.div
+					className={styles.subtitle}
+					initial='hidden'
+					animate='visible'
+					variants={mainVariants}
+					transition={{ ...mainTransition, delay: 0.4 }}>
 					что делает нас особенными? Мы не просто создаем
 					{'\n'}сайты, мы создаем целые истории, которые
 					{'\n'}захватывают внимание и оставляют незабываемое
 					{'\n'}впечатление.
-				</div>
+				</motion.div>
 				<div className={styles.info}>
-					<button
+					<motion.button
+						initial='hidden'
+						animate='visible'
+						variants={infoVariants}
+						transition={{
+							...mainTransition,
+							delay: 1.2,
+							ease: 'easeInOut',
+						}}
 						className={styles.feedback}
-						onClick={() => setIsOpen((prev) => !prev)}>
+						onClick={handleChangeVisibility}>
 						Связаться с нами
-					</button>
-					{isOpen && <ModalFeedback />}
-					<div
+					</motion.button>
+					<motion.div
+						initial='hidden'
+						animate='visible'
+						variants={infoVariants}
+						transition={{
+							...mainTransition,
+							delay: 1.3,
+							ease: 'easeInOut',
+						}}
 						className={styles.promocode}
 						onClick={handleClick}>
 						{promocode.current}
-					</div>
-					<div className={styles.saletext}>
+					</motion.div>
+					<motion.div
+						className={styles.saletext}
+						initial='hidden'
+						animate='visible'
+						variants={infoVariants}
+						transition={{
+							...mainTransition,
+							delay: 1.4,
+							ease: 'easeInOut',
+						}}>
 						10%
 						{'\n'}по промокоду
-					</div>
+					</motion.div>
 				</div>
 			</div>
 			<div className={styles.block}>
-				<div className={styles.pack}>
-					{paths.map((path, i) => (
-						<motion.img
-							src={path}
-							key={`${i}-${path}`}
-							variants={picturesVariant}
-							initial='hidden'
-							animate='visible'
-							custom={i}
-							transition={{
-								ease: 'easeInOut',
-								duration: 1.5,
-								delay: 0.3 * i,
-							}}
-						/>
-					))}
-				</div>
+				<Pack />
 			</div>
 		</main>
 	);

@@ -5,7 +5,7 @@
 	border-top: 1px solid
 		color-mix(in srgb, var(--color-white), transparent 40%);
 	padding: 40px 0;
-	transition: all ease-in-out 0.3s;
+	transition: all ease-in-out 0.5s;
 }
 .title {
 	display: flex;
@@ -90,7 +90,7 @@
 	.service:hover,
 	.service:hover *:not(.content) {
 		cursor: pointer;
-		transition: all ease-in-out 0.3s;
+		transition: all ease-in-out 0.5s;
 		color: var(--brand-green);
 		stroke: var(--brand-green);
 	}

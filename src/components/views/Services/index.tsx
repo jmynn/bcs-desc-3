@@ -47,14 +47,14 @@ const Services = (): ReactNode => {
 		<section className={styles.services}>
 			<div className={styles.row}>
 				<div className={styles.column}>
-					<h4 className={styles.path}>/услуги</h4>
+					<h3 className={styles.path}>/услуги</h3>
 				</div>
 				<div className={styles.column}>
 					<h2 className={styles.title}>МЫ ПРЕДЛАГАЕМ</h2>
-					<h3 className={styles.subtitle}>
+					<div className={styles.subtitle}>
 						Наша команда осуществляет
 						{'\n'}полный спектр услуг по созданию сайта на Тильде
-					</h3>
+					</div>
 				</div>
 				<MediaQuery minWidth={'1200px'}>
 					<div className={styles.column}></div>

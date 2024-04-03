@@ -1,9 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 import Container from '../../ui/Container';
 import HonorCard from '../../ui/HonorCard';
 import styles from './Honor.module.css';
+import { ModalContext } from '../../../providers/ModalProvider';
 
 const Honor = (): ReactNode => {
+	const {handleChangeVisibility} = useContext(ModalContext)
 	return (
 		<section className={styles.honor}>
 			<Container>
@@ -35,7 +37,7 @@ const Honor = (): ReactNode => {
 					</div>
 				</div>
 				<div className={styles.row}>
-					<button className={styles.feedback}>
+					<button className={styles.feedback} onClick={handleChangeVisibility}>
 						<img
 							src='/bracket-s.svg'
 							alt='bracket'

@@ -4,6 +4,8 @@
 	gap: 15px;
 	width: min(100%, 380px);
 	overflow: hidden;
+	transition: all ease-in-out 0.3s;
+	border-radius: 20px 20px 0 0;
 }
 
 .title {
@@ -37,6 +39,7 @@
 	width: min(100%, 380px);
 	height: 100%;
 	object-fit: cover;
+	border-radius: 20px;
 }
 
 @media screen and (min-width: 767px) {
@@ -50,6 +53,11 @@
 		cursor: pointer;
 		transition: all ease-in-out 0.3s;
 		filter: none;
+		scale: 1.1;
+	}
+	.card:hover {
+		overflow: visible;
+		transition: all ease-in-out 0.3s;
 	}
 	.card:hover .image::after {
 		transition: all ease-in-out 0.8s;
