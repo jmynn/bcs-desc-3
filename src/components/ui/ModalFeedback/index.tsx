@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ReactNode, useContext } from 'react';
 import { ModalContext } from '../../../providers/ModalProvider';
+import IconFlag from '../Icons/IconFlag';
 import styles from './ModalFeedback.module.css';
 
 const ModalFeedback = (): ReactNode => {
@@ -43,7 +44,7 @@ const ModalFeedback = (): ReactNode => {
 										Телефон
 									</label>
 									<div className={styles.field}>
-										{/* select */}
+										<IconFlag />
 										<input
 											type='tel'
 											name='phone'

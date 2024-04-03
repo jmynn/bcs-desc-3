@@ -105,6 +105,14 @@
 .column input::placeholder {
 	color: color-mix(in srgb, var(--color-white), transparent 40%);
 }
+.field {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.field > svg {
+	max-width: 7%;
+}
 
 .wishes {
 	width: 100%;
@@ -179,6 +187,9 @@
 	}
 	.wishes {
 		font-size: 24px;
+	}
+	.field > svg {
+		max-width: none;
 	}
 }
 
