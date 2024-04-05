@@ -111,7 +111,7 @@
 		padding: 13px 15px;
 	}
 	.block:first-child {
-		flex: 0 0 54%;
+		flex: 0 0 56%;
 	}
 	.block:last-child {
 		flex: 0 0 auto;
